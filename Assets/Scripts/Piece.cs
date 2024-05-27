@@ -1,7 +1,12 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using System;
 
 public class Piece : MonoBehaviour
 {
+    
+
     public Board board { get; private set; }
     public TetrominoData data { get; private set; }
     public Vector3Int[] cells { get; private set; }
@@ -18,9 +23,68 @@ public class Piece : MonoBehaviour
     public bool stop = false;
     public GameObject Camera;
 
+    private KeyCode key1 = KeyCode.LeftArrow;
+    private KeyCode key2 = KeyCode.RightArrow;
+    private KeyCode key3 = KeyCode.S ;
+    private KeyCode key4 = KeyCode.UpArrow;
+    private KeyCode key5 = KeyCode.DownArrow ;
+    private KeyCode key6 = KeyCode.Space;
+    private int currentSwitch=0;
+    private Button changingButton;
+
     public void Start()
     {
         Camera = GameObject.Find("Main Camera");
+    }
+
+    public void ChangeText()
+    {
+        if(changingButton.GetComponentInChildren<Text>().text == "press any key") {
+        foreach(KeyCode keycode in Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKey(keycode))
+                {
+                    changingButton.GetComponentInChildren<Text>().text = keycode.ToString();
+                    if (currentSwitch == 1)
+                    {
+                        key1= keycode;
+                    }
+                    else if(currentSwitch == 2)
+                    {
+                        key2 = keycode;
+                    }
+                    else if(currentSwitch == 3)
+                    {
+                        key3 = keycode;
+                    }
+                    else if (currentSwitch == 4)
+                    {
+                        key4 = keycode;
+                    }
+                    else if (currentSwitch == 5)
+                    {
+                        key5 = keycode;
+                    }
+                    else if (currentSwitch == 6)
+                    {
+                        key6 = keycode;
+                    }
+                    currentSwitch = 0;
+                    changingButton = null;
+                }
+            }
+    }
+    
+
+    }
+    public void ChangeKey(Button button, int num)
+    {
+
+        button.GetComponentInChildren<Text>().text = "press any key";
+        currentSwitch = num;
+        changingButton = button;
+        
+
     }
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
@@ -45,7 +109,13 @@ public class Piece : MonoBehaviour
 
     private void Update()
     {
-        if (stop == false)
+        if (currentSwitch != 0)
+        {
+            ChangeText();
+
+        }
+
+            if (stop == false)
         {
             board.Clear(this);
 
@@ -54,14 +124,14 @@ public class Piece : MonoBehaviour
         lockTime += Time.deltaTime;
 
         // Handle rotation
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (Input.GetKeyDown(key4)) {
             Rotate(-1);
-        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        } else if (Input.GetKeyDown(key5)) {
             Rotate(1);
         }
 
         // Handle hard drop
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(key6)) {
             HardDrop();
         }
 
@@ -85,7 +155,7 @@ public class Piece : MonoBehaviour
     private void HandleMoveInputs()
     {
         // Soft drop movement
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(key3))
         {
             if (Move(Vector2Int.down)) {
                 // Update the step time to prevent double movement
@@ -94,9 +164,9 @@ public class Piece : MonoBehaviour
         }
 
         // Left/right movement
-        if (Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(key1)) {
             Move(Vector2Int.left);
-        } else if (Input.GetKey(KeyCode.D)) {
+        } else if (Input.GetKey(key2)) {
             Move(Vector2Int.right);
         }
     }

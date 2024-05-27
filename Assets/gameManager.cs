@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
-
+    public Piece pieceScript;
     public bool start = false;
     public Button start1;
     public Button select;
@@ -13,6 +13,12 @@ public class gameManager : MonoBehaviour
     public Button clear;
     public Button retry;
     public Button erase;
+    public Button leftMove;
+    public Button rightMove;
+    public Button downMove;
+    public Button leftSpin;
+    public Button rightSpin;
+    public Button downDrop;
     // Start is called before the first frame update
 
     public void beginGame()
@@ -65,5 +71,31 @@ public class gameManager : MonoBehaviour
         buttonImage.color = newColor;
     }
 
+    public void changeKeyBindings1()
+    {
+        pieceScript.ChangeKey(leftMove, 1);
+    }
+    public void changeKeyBindings2()
+    {
+        pieceScript.ChangeKey(rightMove, 2);
 
+    }
+    public void changeKeyBindings3()
+    {
+        pieceScript.ChangeKey(downMove,3 );
+    }
+
+    public void changeKeyBindings4()
+    {
+        pieceScript.ChangeKey(leftSpin, 4);
+    }
+    public void changeKeyBindings5()
+    {
+        pieceScript.ChangeKey(rightSpin, 5);
+    }
+    public void changeKeyBindings6()
+    {
+        pieceScript.ChangeKey(downDrop, 6);
+    }
 }
+

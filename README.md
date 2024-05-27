@@ -12,7 +12,9 @@ Features:
  Funny shake effect
 
 Needed features:
- An option to reassign key bindings
+ An option to reassign key bindings 
+
+(UPDATE: I LIED. I ADDED THE FEATURE AS I REALIZE THAT THE GAME WOULD BE UNPLAYABLE WITHOUT IT)
 
  Gameover screen
 

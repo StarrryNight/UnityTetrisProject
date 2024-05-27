@@ -25,3 +25,7 @@ Needed features:
  (But I wont add them cuz this project is in the past and I should let go of the past)
 
 Credits to Zigurous on YouTube as assets and basic game functions were learnt from this video: https://www.youtube.com/watch?v=ODLzYI4d-J8
+
+
+Game: https://play.unity.com/mg/other/new-7lrv1
+

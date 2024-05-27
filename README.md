@@ -1,8 +1,23 @@
-# Tetris
+ # UnityTetrisProject
+Made it for a hackathon but unity didnt build it in time to submit it lol.
 
-> Tetris is a tile-matching video game created by Russian software engineer Alexey Pajitnov in 1984. In Tetris, players complete lines by moving differently shaped pieces (tetrominoes), which descend onto the playing field. The completed lines disappear and grant the player points, and the player can proceed to fill the vacated spaces. The game ends when the playing field is filled. The longer the player can delay this inevitable outcome, the higher their score will be.
+Features:
 
-- **Topics**: Game Logic, Tilemaps, Grids
-- **Version**: Unity 2020.3 (LTS)
-- [**Download**](https://github.com/zigurous/unity-tetris-tutorial/archive/refs/heads/main.zip)
-- [**Watch Video**](https://youtu.be/ODLzYI4d-J8)
+Basic tetris game (classic rules) 
+
+Selectable grids for specific practice
+
+Randomize/Unrandomize dropping pieces
+
+Funny shake effect
+
+Needed features:
+An option to reassign key bindings
+
+Gameover screen
+
+Leveling/points
+
+If you're a tetris fan: The game-crashing bugs at 155 or something (also the ~800 lines stage)
+
+(But I wont add them cuz this project is in the past and I should let go of the past)

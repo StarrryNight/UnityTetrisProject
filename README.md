@@ -1,6 +1,9 @@
  # UnityTetrisProject
 Made it for a hackathon but unity didnt build it in time to submit it lol.
 
+https://drive.google.com/file/d/1rSQqpN9N3hLaAJYZTUhgSNYcVASU5YBc/view?usp=sharing
+The Webgl build keeps failing for some reason, so this is the .exe file.
+
 Features:
 
  Basic tetris game (classic rules) 
